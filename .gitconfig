@@ -1,0 +1,21 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	cp = cherry-pick
+	ss = stash
+	sp = stash pop
+	sl = stash list
+	sa = stash apply
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	c1 = checkout HEAD^
+	r1 = reset HEAD^
+[user]
+	name = bigfang
+	email = bitair@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
