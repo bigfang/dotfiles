@@ -1,0 +1,1 @@
+curl -Lks https://github.com/bigfang/dotfiles/raw/master/.bin/dotinit.sh | /bin/bash
