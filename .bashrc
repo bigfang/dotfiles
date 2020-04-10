@@ -5,8 +5,9 @@ export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 export PATH="$HOME/.cargo/bin:$HOME/.bin:$PATH"
-export PATH="$PATH:$(yarn global bin)"
-
+if [ -x "$(command -v yarn)" ]; then
+  export PATH="$(yarn global bin):$PATH"
+fi
 
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/etc/bash_completion.d/asdf.bash

@@ -3,11 +3,11 @@
 echo "\033[33mupdating\033[0m \033[34masdf\033[0m"
 asdf plugin-update --all
 
-echo "\n\033[33mupdating\033[0m \033[34mcargo\033[0m"
-cargo install-update -a
-
 echo "\n\033[33mupdating\033[0m \033[34mnpm\033[0m"
 npm -g update
+
+echo "\n\033[33mupdating\033[0m \033[34mcargo\033[0m"
+cargo install-update -a
 
 echo "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m"
 brew up
