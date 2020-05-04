@@ -1,3 +1,5 @@
+#!/bin/sh
+
 git clone --bare git@github.com:bigfang/dotfiles.git $HOME/.dotfiles.git
 function config {
    git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME $@
