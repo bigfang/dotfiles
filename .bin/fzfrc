@@ -1,7 +1,7 @@
-#!/bin/sh 
+#!/bin/sh
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS='--height 70% --border'
+export FZF_DEFAULT_OPTS='--height 80% --border --reverse'
 export FZF_TMUX=1
 export FZF_TMUX_OPTS='-d 80%'
 
@@ -9,44 +9,50 @@ alias fzf="fzf-tmux -d 80%"
 
 
 # Select a running docker container to stop
-function ds() {
+drs() {
   local cid
   cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
 
   [ -n "$cid" ] && docker stop "$cid"
 }
 
-# fh - repeat history
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+drmi() {
+  local iid
+  iid=$(docker images | sed 1d | fzf -q "$1" | awk '{print $3}')
+
+  [ -n "$iid" ] && docker rmi "$iid"
 }
 
-fhs() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | awk '{$1=""; print $0}' | sort | uniq -c | sort -k1 | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+
+# fh - repeat history
+fh() {
+  print -z "$(history | awk '{$1=""; print $0}' | sort | uniq -c | sort -k1 | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')"
 }
+
 
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
-    local pid
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi
+  local pid
+  if [ "$UID" != "0" ]; then
+    pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+  else
+    pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  fi
 
-    if [ "x$pid" != "x" ]
-    then
-        echo $pid | xargs kill -${1:-9}
-    fi
+  if [ "x$pid" != "x" ]
+  then
+    echo "$pid" | xargs kill -"${1:-9}"
+  fi
 }
+
 
 # tm - create new tmux session, or switch to existing one. Works from within tmux too. (@bag-man)
 # `tm` will allow you to select your tmux session via fzf.
 # `tm irc` will attach to the irc session (if it exists), else it will create it.
 tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
-  if [ $1 ]; then
-    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  if [ "$1" ]; then
+    tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s "$1" && tmux $change -t "$1"); return
   fi
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
