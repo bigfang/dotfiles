@@ -1,1 +1,1 @@
-curl -fsSL https://github.com/bigfang/dotfiles/raw/master/.bin/dotinit.sh | /bin/bash
+curl -fsSL https://github.com/bigfang/dotfiles/raw/master/.bin/dotsinit.sh | /bin/bash

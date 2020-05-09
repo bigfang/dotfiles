@@ -1,13 +1,17 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-echo "\033[33mupdating\033[0m \033[34masdf\033[0m"
+printf "\033[33mupdating\033[0m \033[34masdf\033[0m\n"
 asdf plugin-update --all
 
-echo "\n\033[33mupdating\033[0m \033[34mnpm\033[0m"
-npm -g update
+printf "\n\033[33mupdating\033[0m \033[34mnpm\033[0m\n"
+if [[ "$(npm -g update)" ]]; then
+   cd "$(asdf where nodejs)"/lib
+   npm update
+   cd ~-
+fi
 
-echo "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m"
+printf "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m\n"
 env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
 
-echo "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m"
+printf "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m\n"
 brew up && brew upgrade
