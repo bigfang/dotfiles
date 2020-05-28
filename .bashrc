@@ -6,7 +6,7 @@ PATH=$HOME/.bin:$PATH
 # PATH=$HOME/.cargo/bin:$PATH
 
 
-export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac"
+export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl)"
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/etc/bash_completion.d/asdf.bash
 
@@ -17,7 +17,6 @@ alias emnew='emacs --daemon=emacs'
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 
-alias dr='docker'
 alias dc='docker-compose'
 
 alias ll='exa --time-style long-iso --git -aglh'

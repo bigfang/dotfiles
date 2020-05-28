@@ -1,2 +1,2 @@
 --theme="OneHalfDark"
---pager="less -RF"
+--pager="less -R"
