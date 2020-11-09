@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+_MY_GIT_BIN="$(brew --prefix git)/bin/git"
+
+_my_git_config() {
+    [[ -n "$1" ]] && pushd -q "$1"
+    $_MY_GIT_BIN config user.name "${WORKING_ENV%@*}"
+    $_MY_GIT_BIN config user.email "${WORKING_ENV}"
+    printf "\nUser Name: \t\033[4;34m%s\033[0m\n" "$($_MY_GIT_BIN config user.name)"
+    printf "User Email: \t\033[4;34m%s\033[0m\n" "$($_MY_GIT_BIN config user.email)"
+    [[ -n "$1" ]] && popd > /dev/null
+}
+
+git() {
+    $_MY_GIT_BIN "$@"
+
+    local workd
+    case "$1" in
+        'init')
+            _my_git_config
+            ;;
+        'clone')
+            workd="${@: -1}"
+            if [[ $workd == *@* ]]; then
+                workd="${workd##*/}"
+                workd="${workd%.git}"
+            fi
+            _my_git_config "$workd"
+            ;;
+        *)
+            ;;
+    esac
+}
