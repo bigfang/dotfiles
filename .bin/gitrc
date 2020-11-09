@@ -21,7 +21,8 @@ git() {
             ;;
         'clone')
             workd="${@: -1}"
-            if [[ $workd == *@* ]]; then
+            if [[ $workd =~ ^(git@\|https?://\|ssh://\|file:///\|\.?\.?/).+$ ]]; then
+                echo $workd
                 workd="${workd##*/}"
                 workd="${workd%.git}"
             fi
