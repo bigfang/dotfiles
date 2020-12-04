@@ -1,42 +1,51 @@
 #!/usr/bin/env bash
 
-
 export SKIM_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export SKIM_DEFAULT_OPTIONS='--height 80% --border --reverse --bind=alt-n:down,alt-p:up,ctrl-n:page-down,ctrl-p:page-up,ctrl-k:kill-line'
-alias skf="sk --ansi -i -c 'rg --color=always --line-number "{}"'"
-
+alias skf="sk --ansi -i -c 'rg --color=always --line-number \"{}\"'"
 
 # fh - repeat history
 fh() {
-  print -z "$(history | awk '{$1=""; print $0}' | sort | uniq -c | sort -nk1 | sk --tac --no-sort | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')"
+  print -z "$(history | awk '{$1=""; print $0}' | sort | uniq -c | sort -nk1 | sk --tac --no-sort -q "$1" | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')"
 }
 
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
   local pid
   if [ "$UID" != "0" ]; then
-    pid=$(ps -f -u $UID | sed 1d | sk -m | awk '{print $2}')
+    pid=$(ps -f -u $UID | sed 1d | sk -m -e -q "$1" | awk '{print $2}')
   else
-    pid=$(ps -ef | sed 1d | sk -m | awk '{print $2}')
+    pid=$(ps -ef | sed 1d | sk -m -e -q "$1" | awk '{print $2}')
   fi
 
   if [ "x$pid" != "x" ]
   then
-    echo "$pid" | xargs kill -"${1:-9}"
+    echo "$pid" | xargs kill -"${2:-9}"
   fi
+}
+
+# cdd - cd to selected directory
+cdd() {
+  local dir
+  dir=$(fd -H --type d | sk -q "$1") && cd "$dir" || exit
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+  local file
+  local dir
+  file=$(fd -H --type f | sk -q "$1") && dir=$(dirname "$file") && cd "$dir" || exit
 }
 
 # Select a running docker container to stop
 drs() {
   local cid
   cid=$(docker ps -a | sed 1d | sk -m | awk '{print $1}')
-
   echo "$cid" | xargs docker stop
 }
 
 drmi() {
   local iid
   iid=$(docker images | sed 1d | sk -m | awk '{print $3}')
-
-  echo "$cid" | xargs docker rmi
+  echo "$iid" | xargs docker rmi
 }
