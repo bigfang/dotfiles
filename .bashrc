@@ -32,5 +32,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # $(brew --prefix)/opt/fzf/install
 [[ -n "$BASH" ]] && [[ -f ~/.fzf.bash ]] && . ~/.fzf.bash
-[[ -f ~/.bin/fzfrc ]] && . ~/.bin/fzfrc
+[[ -f ~/.bin/skimrc ]] && . ~/.bin/skimrc
 [[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/gitrc ]] && . ~/.bin/gitrc
