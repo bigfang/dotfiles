@@ -18,8 +18,8 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 210
-    lines: 48
+    columns: 245
+    lines: 56
 
   # Window position (changes require restart)
   #
@@ -112,7 +112,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 18.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -262,7 +262,7 @@ font:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.75
+background_opacity: 0.90
 
 selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -310,6 +310,13 @@ selection:
 #  program: /bin/bash
 #  args:
 #    - --login
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach -t praha || tmux new -s praha"
 
 # Startup directory
 #
@@ -614,6 +621,26 @@ key_bindings:
   - { key: Period,    mods: Command,       chars: "\x1b."                       } # M-.
   - { key: Period,    mods: Command|Shift, chars: "\x1b>"                       } # M->
   - { key: Slash,     mods: Command,       chars: "\x1b/"                       } # M-/
+  - { key: Up,        mods: Shift,         chars: "\x1b[1;2A"                   }
+  - { key: Up,        mods: Control,       chars: "\x1b[1;5A"                   }
+  - { key: Up,        mods: Command,       chars: "\x1b[1;3A"                   }
+  - { key: Up,                             chars: "\x1b[A",   mode: ~AppCursor  }
+  - { key: Up,                             chars: "\x1bOA",   mode: AppCursor   }
+  - { key: Down,      mods: Shift,         chars: "\x1b[1;2B"                   }
+  - { key: Down,      mods: Control,       chars: "\x1b[1;5B"                   }
+  - { key: Down,      mods: Command,       chars: "\x1b[1;3B"                   }
+  - { key: Down,                           chars: "\x1b[B",   mode: ~AppCursor  }
+  - { key: Down,                           chars: "\x1bOB",   mode: AppCursor   }
+  - { key: Right,     mods: Shift,         chars: "\x1b[1;2C"                   }
+  - { key: Right,     mods: Control,       chars: "\x1b[1;5C"                   }
+  - { key: Right,     mods: Command,       chars: "\x1b[1;3C"                   }
+  - { key: Right,                          chars: "\x1b[C",   mode: ~AppCursor  }
+  - { key: Right,                          chars: "\x1bOC",   mode: AppCursor   }
+  - { key: Left,      mods: Shift,         chars: "\x1b[1;2D"                   }
+  - { key: Left,      mods: Control,       chars: "\x1b[1;5D"                   }
+  - { key: Left,      mods: Command,       chars: "\x1b[1;3D"                   }
+  - { key: Left,                           chars: "\x1b[D",   mode: ~AppCursor  }
+  - { key: Left,                           chars: "\x1bOD",   mode: AppCursor   }
 
   # xxd -psd
   - { key: Q,         mods: Control,       chars: "\x11" } # https://github.com/alacritty/alacritty/issues/1359#issuecomment-430265381
@@ -726,6 +753,7 @@ key_bindings:
   #   - Debug
   #   - Trace
   #log_level: Warn
+
 
   # Print all received window events.
   #print_events: false
