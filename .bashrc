@@ -7,6 +7,8 @@ PATH=$HOME/.bin:$PATH
 
 
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl)"
+export KERL_BUILD_DOCS="yes"
+
 source /usr/local/opt/asdf/asdf.sh
 source /usr/local/etc/bash_completion.d/asdf.bash
 
