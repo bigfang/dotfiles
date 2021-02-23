@@ -19,7 +19,7 @@ alias emnew='emacs --daemon=emacs'
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 
-alias dc='docker-compose'
+alias dc='docker compose'
 
 alias ll='exa --time-style long-iso --git -aglh'
 alias lt='exa -T -s type'
@@ -32,7 +32,5 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 [[ $- != *i* ]] && return
 
 
-# $(brew --prefix)/opt/fzf/install
-[[ -n "$BASH" ]] && [[ -f ~/.fzf.bash ]] && . ~/.fzf.bash
 [[ -f ~/.bin/skimrc ]] && . ~/.bin/skimrc
 [[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/gitrc ]] && . ~/.bin/gitrc
