@@ -2,7 +2,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 PATH=$HOME/.bin:$PATH
 
-[[ -x "$(command -v yarn)" ]] && PATH=$(yarn global bin):$PATH
+# [[ -x "$(command -v yarn)" ]] && PATH=$(yarn global bin):$PATH
 # PATH=$HOME/.cargo/bin:$PATH
 
 
