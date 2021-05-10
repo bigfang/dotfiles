@@ -4,11 +4,12 @@ printf "\033[33mupdating\033[0m \033[34masdf\033[0m\n"
 asdf plugin-update --all
 
 printf "\n\033[33mupdating\033[0m \033[34mnpm\033[0m\n"
-if [[ "$(npm -g update)" ]]; then
-   cd "$(asdf where nodejs)"/lib
-   npm update
-   cd ~-
-fi
+npm update -g
+# if [[ "$(npm -g update)" ]]; then
+#    cd "$(asdf where nodejs)"/lib
+#    npm update
+#    cd ~-
+# fi
 
 printf "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m\n"
 env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
