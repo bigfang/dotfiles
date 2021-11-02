@@ -16,3 +16,6 @@ env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
 
 printf "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m\n"
 brew up && brew upgrade
+
+printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"
+rustup update
