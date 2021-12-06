@@ -9,8 +9,8 @@ PATH=$HOME/.bin:$PATH
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl@1.1)"
 export KERL_BUILD_DOCS="yes"
 
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/etc/bash_completion.d/asdf.bash
+. $(brew --prefix asdf)/libexec/asdf.sh
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 # tools: fzf sk ripgrep fd exa bat
 alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
