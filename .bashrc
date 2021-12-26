@@ -34,3 +34,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 [[ -f ~/.bin/skimrc ]] && . ~/.bin/skimrc
 [[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/gitrc ]] && . ~/.bin/gitrc
+
+[[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init bash)"
+
