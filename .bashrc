@@ -13,7 +13,7 @@ export KERL_BUILD_DOCS="yes"
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 # tools: fzf sk ripgrep fd exa bat
-alias dots='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias emnew='emacs --daemon=emacs'
 alias vim='emacsclient -t --socket-name=emacs'
