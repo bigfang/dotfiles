@@ -16,6 +16,7 @@ export KERL_BUILD_DOCS="yes"
 alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias emnew='emacs --daemon=emacs'
+alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 

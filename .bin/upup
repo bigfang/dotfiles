@@ -19,3 +19,7 @@ brew up && brew upgrade
 
 printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"
 rustup update
+
+# printf "\n\033[33mupdating\033[0m \033[34mEmacs Packages\033[0m\n"
+# emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch
+
