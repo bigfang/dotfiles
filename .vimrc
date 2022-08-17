@@ -1,5 +1,5 @@
 syntax on
-colorscheme zellner
+"colorscheme slate
 set smarttab
 set expandtab
 set hlsearch
