@@ -4,16 +4,27 @@ import:
 #env:
   #TERM: alacritty
 
+# screen - 2048 x 1152
+# cell - 9 x 20
 window:
   dimensions:
-    columns: 216
+    columns: 214
     lines: 52
   position:
-    x: 54
-    y: 84
+    x: 58
+    y: 112
+  padding:
+    x: 0
+    y: 0
+  dynamic_padding: false
+  # decorations: full
   opacity: 0.9
+  # startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
+  decorations_theme_variant: None
+  resize_increments: false
+  option_as_alt: None
 
 scrolling:
   history: 10000
@@ -45,7 +56,7 @@ selection:
 shell:
   program: /bin/zsh
   args:
-    - -l
+    - --login
     - -c
     - "tmux attach -t praha || tmux new -s praha"
 
