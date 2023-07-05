@@ -12,7 +12,7 @@ export KERL_BUILD_DOCS="yes"
 . $(brew --prefix asdf)/libexec/asdf.sh
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
-# tools: fzf sk ripgrep fd exa bat
+# tools: fzf skim ripgrep fd exa bat
 alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias emnew='emacs --daemon=emacs'
@@ -20,10 +20,13 @@ alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 
-alias dc='docker compose'
-
 alias ll='exa --time-style long-iso --git -aglh'
 alias lt='exa -T -s type'
+
+alias dc='docker compose'
+
+alias ppm=pnpm
+alias ppx=pnpx
 
 
 export ERL_AFLAGS="-kernel shell_history enabled"
@@ -33,8 +36,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 [[ $- != *i* ]] && return
 
 
+[[ -x $(command -v nvim) ]] && alias vi=nvim
 [[ -f ~/.bin/skimrc ]] && . ~/.bin/skimrc
 [[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/gitrc ]] && . ~/.bin/gitrc
-
-[[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init bash)"
 

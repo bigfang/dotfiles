@@ -3,3 +3,8 @@ if status is-interactive
 end
 
 bind ';;'  accept-autosuggestion
+
+if command -q zoxide
+    zoxide init fish | source
+end
+
