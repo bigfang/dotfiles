@@ -25,8 +25,8 @@ alias lt='exa -T -s type'
 
 alias dc='docker compose'
 
-alias ppm=pnpm
-alias ppx=pnpx
+alias ppm='corepack pnpm'
+alias ppx='corepack pnpx'
 
 
 export ERL_AFLAGS="-kernel shell_history enabled"
