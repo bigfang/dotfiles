@@ -16,6 +16,7 @@
 [user]
 	name = bigfang
 	email = bitair@gmail.com
+	signingkey = 165DBB59F3E1024D
 [pull]
 	rebase = true
 [merge]
@@ -25,3 +26,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true

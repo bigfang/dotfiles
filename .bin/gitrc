@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_MY_GIT_BIN="$(brew --prefix git)/bin/git"
+_MY_GIT_BIN="GPG_TTY=$(tty) $(brew --prefix git)/bin/git"
 
 _my_git_config() {
     [[ -n "$1" ]] && pushd -q "$1"
