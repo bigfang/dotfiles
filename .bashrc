@@ -6,7 +6,7 @@ PATH=$HOME/.bin:$PATH
 # PATH=$HOME/.cargo/bin:$PATH
 
 
-export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl@1.1)"
+export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl@3)"
 export KERL_BUILD_DOCS="yes"
 
 . $(brew --prefix asdf)/libexec/asdf.sh

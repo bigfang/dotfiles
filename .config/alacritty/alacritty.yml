@@ -4,15 +4,15 @@ import:
 #env:
   #TERM: alacritty
 
-# screen - 2048 x 1152
-# cell - 9 x 20
+# screen - 2340 x 1260
+# cell - 9 x 21
 window:
   dimensions:
-    columns: 214
-    lines: 52
+    columns: 236
+    lines: 56
   position:
-    x: 58
-    y: 112
+    x: 100
+    y: 208
   padding:
     x: 0
     y: 0
@@ -31,7 +31,7 @@ scrolling:
   #multiplier: 3
 
 font:
-  size: 15.0
+  size: 17.0
   normal:
     family: Monaco
     style: Regular

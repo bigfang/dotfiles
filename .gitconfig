@@ -1,5 +1,8 @@
 [init]
 	defaultBranch = master
+[core]
+    # excludesfile = /Users/bigfang/.gitignore
+	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
 	br = branch
@@ -26,5 +29,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	gpgsign = true
+# [commit]
+# 	gpgsign = true

@@ -9,12 +9,9 @@ fi
 
 [[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init zsh)" && alias cd=z
 
+# export JAVA_HOME=$(asdf where java)
 
-# export WORKING_ENV=fang@work
-
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-
-export JAVA_HOME=$(asdf where java)
+# export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+# export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+# export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 

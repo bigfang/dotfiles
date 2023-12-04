@@ -1,0 +1,14 @@
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Node
+npm-debug.log
+
+# vi
+*~
+
+# Emacs
+\#*\#
