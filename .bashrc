@@ -37,6 +37,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 
 [[ -x $(command -v nvim) ]] && alias vi=nvim
-[[ -f ~/.bin/skimrc ]] && . ~/.bin/skimrc
-[[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/gitrc ]] && . ~/.bin/gitrc
+[[ -f ~/.bin/etc/skimrc ]] && . ~/.bin/etc/skimrc
+[[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/etc/gitrc ]] && . ~/.bin/etc/gitrc
 
