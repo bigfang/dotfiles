@@ -6,13 +6,15 @@ PATH=$HOME/.bin:$PATH
 # PATH=$HOME/.cargo/bin:$PATH
 
 
+export RUST_WITHOUT=rust-docs
+
 export KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --with-ssl=$(brew --prefix openssl@3)"
 export KERL_BUILD_DOCS="yes"
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
-# tools: fzf skim ripgrep fd exa bat
+# tools: fzf skim ripgrep fd eza bat
 alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias emnew='emacs --daemon=emacs'
@@ -20,8 +22,8 @@ alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 
-alias ll='exa --time-style long-iso --git -aglh'
-alias lt='exa -T -s type'
+alias ll='eza --time-style long-iso --git -aglh'
+alias lt='eza -T -s type'
 
 alias dc='docker compose'
 
