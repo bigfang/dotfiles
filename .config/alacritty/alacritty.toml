@@ -1,0 +1,59 @@
+import = ["/Users/bigfang/.config/alacritty/kbd.toml"]
+live_config_reload = true
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "Monaco"
+style = "Bold"
+
+[font.bold_italic]
+family = "Monaco"
+style = "Bold Italic"
+
+[font.italic]
+family = "Monaco"
+style = "Italic"
+
+[font.normal]
+family = "Monaco"
+style = "Regular"
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Right"
+
+[scrolling]
+history = 10000
+
+[selection]
+save_to_clipboard = true
+
+[shell]
+args = ["--login", "-c", "tmux attach -t praha || tmux new -s praha"]
+program = "/bin/zsh"
+
+[window]
+decorations_theme_variant = "None"
+dynamic_padding = false
+dynamic_title = true
+opacity = 0.9
+# option_as_alt = "None"
+# resize_increments = false
+title = "Alacritty"
+
+[window.dimensions]
+columns = 236
+lines = 56
+
+[window.padding]
+x = 0
+y = 0
+
+[window.position]
+x = 100
+y = 208
