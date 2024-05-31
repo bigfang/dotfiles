@@ -1,3 +1,5 @@
+# https://www.physics.udel.edu/%7Ewatson/scen103/ascii.html
+# C-[ == <escape> == ^[ == \u001B
 [keyboard]
 bindings = [
   { key = "A",         mods = "Command",       chars = "\u001Ba"                       },
@@ -112,11 +114,11 @@ bindings = [
   { key = "Left",                            chars = "\u001BOD",   mode = "AppCursor"  },
 
   # xxd -psd
-  { key = "Q",         mods = "Control",       chars = "\u0011" }, # https://github.com/alacritty/alacritty/issues/1359#issuecomment-430265381
+  { key = "Q",         mods = "Control",       chars = "\u0011"                        },
   { key = "Space",     mods = "Control",       chars = "\u0000"                        }, # C-SPC
-  { key = "Slash",     mods = "Control",       chars = "\u001F"                        }, # C-/
-  # https://stackoverflow.com/a/40222318
-  { key = "Slash",     mods = "Control|Shift", chars = "\u001B[emacs-C-?" }, # ^[[emacs-C-?
-  # Not work
-  { key = "Slash",     mods = "Command|Shift", chars = "\u001B?" } # M-?
+  { key = "Slash",     mods = "Control",       chars = "\u001F"                        }, # C-_ | C-/
+
+  # Not Work
+  { key = "Slash",     mods = "Command|Shift", chars = "\u001B?"          }, # M-?
+  { key = "Slash",     mods = "Control|Shift", chars = "\u001B[emacs-C-?" }, # https://stackoverflow.com/a/40222318
 ]

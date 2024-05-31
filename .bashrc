@@ -20,6 +20,7 @@ alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
 alias vim='emacsclient -t --socket-name=emacs'
 alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
 
+alias ls='eza'
 alias ll='eza --time-style long-iso --git -aglh'
 alias lt='eza -T -s type'
 

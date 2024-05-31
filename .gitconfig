@@ -1,7 +1,6 @@
 [init]
 	defaultBranch = master
 [core]
-    # excludesfile = /Users/bigfang/.gitignore
 	excludesfile = ~/.gitignore
 [alias]
 	co = checkout

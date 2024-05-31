@@ -1,4 +1,4 @@
-import = ["/Users/bigfang/.config/alacritty/kbd.toml"]
+import = ["~/.config/alacritty/kbd.toml"]
 live_config_reload = true
 
 [font]
@@ -28,20 +28,21 @@ action = "PasteSelection"
 mouse = "Right"
 
 [scrolling]
-history = 10000
+history = 30000
 
 [selection]
+# semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
 [shell]
-args = ["--login", "-c", "tmux attach -t praha || tmux new -s praha"]
 program = "/bin/zsh"
+args = ["--login", "-c", "tmux attach -t praha || tmux new -s praha"]
 
 [window]
 decorations_theme_variant = "None"
 dynamic_padding = false
 dynamic_title = true
-opacity = 0.9
+opacity = 0.90
 # option_as_alt = "None"
 # resize_increments = false
 title = "Alacritty"
