@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cursor_blink": false,
   "vim_mode": true,
   "vim": {
     // "use_smartcase_find": true,
@@ -17,10 +18,8 @@
     // Lets `f` and `t` motions extend across multiple lines
     "use_multiline_find": true
   },
-  "cursor_blink": false,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
+  "terminal": {
+    "env": { "EDITOR": "zed --wait" }
   },
   "theme": {
     "mode": "system",
@@ -28,5 +27,11 @@
     "dark": "One Dark"
   },
   "ui_font_size": 18,
-  "buffer_font_size": 16
+  "buffer_font_size": 16,
+  "buffer_font_family": "Monaco",
+  "file_scan_exclusions": ["**/node_modules", "**/*.~*~"],
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
 }

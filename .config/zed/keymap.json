@@ -7,8 +7,20 @@
       "cmd-right": ["workspace::ActivatePaneInDirection", "Right"],
       "cmd-up": ["workspace::ActivatePaneInDirection", "Up"],
       "cmd-down": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-x o": ["workspace::ActivatePaneInDirection", "Down"],
       "cmd-n": "menu::SelectNext",
       "cmd-p": "menu::SelectPrev"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-[": "pane::GoBack",
+      "cmd-]": "pane::GoForward",
+      "ctrl-shift-up": "editor::MoveLineUp",
+      "ctrl-shift-down": "editor::MoveLineDown",
+      "ctrl-/": "editor::Undo",
+      "ctrl-?": "editor::Redo"
     }
   },
   {
@@ -20,24 +32,47 @@
     }
   },
   {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-x o": ["workspace::ActivatePaneInDirection", "Up"],
+      "cmd-b": ["terminal::SendText", "\u001Bb"],
+      "cmd-f": ["terminal::SendText", "\u001Bf"],
+      "cmd-.": ["terminal::SendText", "\u001B."],
+      "ctrl-/": ["terminal::SendText", "\u001F"]
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "enter": "vim::MoveToNextMatch"
+    }
+  },
+  {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       "space w": "workspace::Save",
       "space k": "pane::CloseActiveItem",
       "space K": "pane::ReopenClosedItem",
       "space p f": "file_finder::Toggle",
+      "space p s": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ],
       "space g": "editor::ToggleGitBlame",
       "space space": "workspace::ActivateNextPane",
       "space 0": "pane::CloseActiveItem",
       "space \\": "pane::SplitRight",
       "space -": "pane::SplitDown",
       "space H": "project_search::ToggleFilters",
+      // "cmd-w": "vim::VisualYank",
       "; ;": "editor::ToggleComments",
       "H": "vim::StartOfLine",
       "L": "vim::EndOfLine",
       "^": "vim::StartOfDocument",
       "$": "vim::EndOfDocument",
-      "q": "vim::Matching"
+      "@": "vim::Matching"
     }
   },
   {
@@ -52,15 +87,15 @@
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       // visual, visual line & visual block modes
+      "v": "editor::SelectLargerSyntaxNode",
+      "V": "editor::SelectSmallerSyntaxNode"
     }
   },
   {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "k j": "vim::NormalBefore", // remap kj in insert mode to escape.
+      "j j": "vim::NormalBefore", // remap jj in insert mode to escape.
       "ctrl-g": "vim::NormalBefore",
-      "ctrl-/": "editor::Undo",
-      "ctrl-?": "editor::Redo",
       "ctrl-y": "editor::Paste",
       "cmd-n": "editor::MoveDown",
       "cmd-p": "editor::MoveUp",
