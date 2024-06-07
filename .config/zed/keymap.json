@@ -1,0 +1,71 @@
+[
+  {
+    "bindings": {
+      "cmd-x": "command_palette::Toggle",
+      "ctrl-g": "menu::Cancel",
+      "cmd-left": ["workspace::ActivatePaneInDirection", "Left"],
+      "cmd-right": ["workspace::ActivatePaneInDirection", "Right"],
+      "cmd-up": ["workspace::ActivatePaneInDirection", "Up"],
+      "cmd-down": ["workspace::ActivatePaneInDirection", "Down"],
+      "cmd-n": "menu::SelectNext",
+      "cmd-p": "menu::SelectPrev"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "cmd-p": "editor::ContextMenuPrev",
+      "cmd-n": "editor::ContextMenuNext",
+      "cmd-i": "editor::ContextMenuNext"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "space w": "workspace::Save",
+      "space k": "pane::CloseActiveItem",
+      "space K": "pane::ReopenClosedItem",
+      "space p f": "file_finder::Toggle",
+      "space g": "editor::ToggleGitBlame",
+      "space space": "workspace::ActivateNextPane",
+      "space 0": "pane::CloseActiveItem",
+      "space \\": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space H": "project_search::ToggleFilters",
+      "; ;": "editor::ToggleComments",
+      "H": "vim::StartOfLine",
+      "L": "vim::EndOfLine",
+      "^": "vim::StartOfDocument",
+      "$": "vim::EndOfDocument",
+      "q": "vim::Matching"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      // "down": ["workspace::SendKeystrokes", "4 j"]
+      // "up": ["workspace::SendKeystrokes", "4 k"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // visual, visual line & visual block modes
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "k j": "vim::NormalBefore", // remap kj in insert mode to escape.
+      "ctrl-g": "vim::NormalBefore",
+      "ctrl-/": "editor::Undo",
+      "ctrl-?": "editor::Redo",
+      "ctrl-y": "editor::Paste",
+      "cmd-n": "editor::MoveDown",
+      "cmd-p": "editor::MoveUp",
+      "cmd-b": "editor::MoveToPreviousWordStart",
+      "cmd-f": "editor::MoveToNextWordEnd"
+    }
+  }
+]
