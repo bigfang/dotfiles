@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+PROXY_INTERFACE="Ethernet"
+PROXY_HOST=127.0.0.1
+PROXY_PORT=7890
+
+if [ "$#" -ne 1 ]; then
+    echo "Argument missing [on/off]"
+    exit 0
+fi
+
+
+if [ $1 == "on" ]; then
+    networksetup -setwebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    networksetup -setsecurewebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    networksetup -setsocksfirewallproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    echo "Enabled proxy for $PROXY_INTERFACE"
+elif [ $1 == "off" ]; then
+    networksetup -setwebproxystate "$PROXY_INTERFACE" off
+    networksetup -setsecurewebproxystate "$PROXY_INTERFACE" off
+    networksetup -setsocksfirewallproxystate "$PROXY_INTERFACE" off
+    echo "Disabled proxy for $PROXY_INTERFACE"
+else
+    echo "Argument invalid [permitted:on/off]"
+fi
