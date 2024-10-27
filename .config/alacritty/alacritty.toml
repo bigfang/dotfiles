@@ -1,5 +1,5 @@
-import = ["~/.config/alacritty/kbd.toml"]
-live_config_reload = true
+general.import = ["~/.config/alacritty/kbd.toml"]
+general.live_config_reload = true
 
 [font]
 size = 17.0
@@ -34,7 +34,7 @@ history = 30000
 # semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["--login", "-c", "tmux attach -t praha || tmux new -s praha"]
 
