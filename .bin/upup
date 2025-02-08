@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 printf "\033[33mupdating\033[0m \033[34masdf\033[0m\n"
-asdf plugin-update --all
+asdf plugin update --all
 
 # printf "\n\033[33mupdating\033[0m \033[34mnpm\033[0m\n"
 # npm update -g
