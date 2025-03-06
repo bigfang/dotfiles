@@ -12,8 +12,8 @@ fi
 
 
 [[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init zsh)" && alias cd=z
+[[ -x "$(command -v mise)" ]] && eval "$(mise activate zsh)"
 
-# export JAVA_HOME=$(asdf where java)
 
 export HOMEBREW_BREW_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirror.nju.edu.cn/git/homebrew/homebrew-core.git"

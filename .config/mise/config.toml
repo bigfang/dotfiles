@@ -1,0 +1,20 @@
+[tools]
+bun = "latest"
+elixir = "latest"
+erlang = "latest"
+ffmpeg = "latest"
+java = "adopt"
+node = "lts"
+python = "3"
+rust = "stable"
+yt-dlp = "latest"
+
+[alias.java.versions]
+adopt = "adoptopenjdk-21"
+
+[env]
+ERL_AFLAGS = "-kernel shell_history enabled"
+RUST_WITHOUT = "rust-docs"
+
+[settings]
+# python.uv_venv_auto = true

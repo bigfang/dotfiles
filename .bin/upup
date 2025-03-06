@@ -1,30 +1,18 @@
 #!/usr/bin/env bash
 
-printf "\033[33mupdating\033[0m \033[34masdf\033[0m\n"
-asdf plugin update --all
-
-# printf "\n\033[33mupdating\033[0m \033[34mnpm\033[0m\n"
-# npm update -g
-# if [[ "$(npm -g update)" ]]; then
-#    cd "$(asdf where nodejs)"/lib
-#    npm update
-#    cd ~-
-# fi
+printf "\033[33mupdating\033[0m \033[34mmise\033[0m\n"
+mise plugins up
+mise upgrade
 
 printf "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m\n"
 env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
 
 printf "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m\n"
 brew up && brew upgrade
-printf "\n\033[33mupdating\033[0m \033[34mhomebrew cask\033[0m\n"
-brew outdated --cask --greedy
-brew upgrade --cask --greedy
+printf "\n\033[33mshow\033[0m \033[34mhomebrew outdated\033[0m\n"
+brew outdated --greedy
 
-if [[ -x $(command -v rustup) ]]; then
-    printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"
-    rustup update
-fi
-
-# printf "\n\033[33mupdating\033[0m \033[34mEmacs Packages\033[0m\n"
-# emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch
-
+# if [[ -x $(command -v rustup) ]]; then
+#     printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"
+#     rustup update
+# fi
