@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 printf "\033[33mupdating\033[0m \033[34mmise\033[0m\n"
+mise plugins up
 mise upgrade
 
 printf "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m\n"
