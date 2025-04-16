@@ -2,6 +2,9 @@
 #    source ~/.bin/etc/zshrc
 # fi
 
+bindkey '\el' down-case-word
+
+
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243"
 bindkey ';;' autosuggest-accept
 

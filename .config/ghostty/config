@@ -1,0 +1,79 @@
+# command = /opt/homebrew/bin/tmux new -A -s praha
+
+term = xterm-256color
+theme = Tomorrow Night
+
+window-theme = auto
+window-width = 216
+window-height = 53
+
+macos-titlebar-style = transparent
+macos-non-native-fullscreen = true
+
+font-size = 18
+font-family = "Maple Mono Normal NF CN"
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-opacity = 0.6
+
+background-opacity = 0.9
+background-blur = 6
+
+unfocused-split-opacity = 0.7
+
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+
+quit-after-last-window-closed = true
+
+## 键绑定
+macos-option-as-alt = left
+
+keybind = super+shift+u=toggle_quick_terminal
+keybind = super+q=unbind
+keybind = super+t=unbind
+keybind = super+,=unbind
+
+keybind = super+h=esc:h
+keybind = super+m=esc:m
+
+# 大小写
+keybind = super+c=esc:c
+keybind = super+u=esc:u
+keybind = super+l=esc:l
+# 移动
+keybind = super+f=esc:f
+keybind = super+b=esc:b
+# 编辑
+keybind = super+d=esc:d
+keybind = super+w=esc:w
+# 遍历
+keybind = super+n=esc:n
+keybind = super+p=esc:p
+keybind = super+.=esc:.
+
+# 屏幕操作
+keybind = super+shift+n=scroll_page_lines:3
+keybind = super+shift+p=scroll_page_lines:-3
+keybind = super+alt+h=resize_split:left,10
+keybind = super+alt+j=resize_split:down,10
+keybind = super+alt+k=resize_split:up,10
+keybind = super+alt+l=resize_split:right,10
+
+# C-j 作为前缀
+keybind = ctrl+j>space=new_split:down
+keybind = ctrl+j>enter=new_split:right
+keybind = ctrl+j>h=goto_split:left
+keybind = ctrl+j>j=goto_split:down
+keybind = ctrl+j>k=goto_split:up
+keybind = ctrl+j>l=goto_split:right
+keybind = ctrl+j>,=goto_split:previous
+keybind = ctrl+j>.=goto_split:next
+
+keybind = ctrl+j>ctrl+n=new_window
+keybind = ctrl+j>n=new_tab
+keybind = ctrl+j>ctrl+h=goto_tab:1
+keybind = ctrl+j>ctrl+,=previous_tab
+keybind = ctrl+j>ctrl+.=next_tab
+keybind = ctrl+j>ctrl+l=last_tab
