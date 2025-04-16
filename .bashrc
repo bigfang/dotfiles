@@ -4,7 +4,7 @@ PATH=$HOME/.bin:$PATH
 
 
 # tools: fzf skim ripgrep fd eza bat
-alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+alias got='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
 alias emnew='emacs --daemon=emacs'
 alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
