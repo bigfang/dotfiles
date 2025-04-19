@@ -6,10 +6,10 @@ PATH=$HOME/.bin:$PATH
 # tools: fzf skim ripgrep fd eza bat
 alias got='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 
-alias emnew='emacs --daemon=emacs'
-alias emup="emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch"
-alias vim='emacsclient -t --socket-name=emacs'
-alias emkill="emacsclient -e '(kill-emacs)' --socket-name=emacs"
+alias emnew='emacs --daemon=vim'
+alias emkill="emacsclient --socket-name=vim --eval '(kill-emacs)'"
+alias emup="emacs --batch --user `whoami` --eval '(package-upgrade-all)'"
+alias vi='emacsclient -nw -s vim -a vi 2>/dev/null'
 
 alias ls='eza'
 alias ll='eza --time-style long-iso --git -aglh'
@@ -26,5 +26,4 @@ alias dc='docker compose'
 [[ -x $(command -v dotnet) ]] && alias dnt=dotnet
 [[ -x $(command -v bat) ]] && alias cat="bat -p -n"
 [[ -f ~/.bin/etc/skimrc ]] && . ~/.bin/etc/skimrc
-[[ -n "$WORKING_ENV"  ]] && [[ -f ~/.bin/etc/gitrc ]] && . ~/.bin/etc/gitrc
-
+[[ -n "$WORKING_ENV" ]] && [[ -f ~/.bin/etc/gitrc ]] && . ~/.bin/etc/gitrc
