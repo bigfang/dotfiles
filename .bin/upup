@@ -12,11 +12,11 @@ brew up && brew upgrade
 printf "\n\033[33mshow\033[0m \033[34mhomebrew outdated\033[0m\n"
 brew outdated --greedy
 
+printf "\n\033[33mupdating\033[0m \033[34mEmacs Packages\033[0m\n"
+emacs --batch --user `whoami` --eval '(package-upgrade-all)'
+
 # if [[ -x $(command -v rustup) ]]; then
 #     printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"
 #     rustup update
 # fi
-
-# printf "\n\033[33mupdating\033[0m \033[34mEmacs Packages\033[0m\n"
-# emacs --eval '(paradox-upgrade-packages)' -u `whoami` --batch
 
