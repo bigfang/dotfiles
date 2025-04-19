@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-printf "\033[33mupdating\033[0m \033[34mmise\033[0m\n"
-mise plugins up
-mise upgrade
+printf "\033[33mupdating\033[0m \033[34mEmacs Packages\033[0m\n"
+emacs --batch --user `whoami` --eval '(package-upgrade-all)'
 
 printf "\n\033[33mupdating\033[0m \033[34moh-my-zsh\033[0m\n"
 env ZSH="$ZSH" sh "$ZSH/tools/upgrade.sh"
@@ -11,6 +10,10 @@ printf "\n\033[33mupdating\033[0m \033[34mhomebrew\033[0m\n"
 brew up && brew upgrade
 printf "\n\033[33mshow\033[0m \033[34mhomebrew outdated\033[0m\n"
 brew outdated --greedy
+
+printf "\n\033[33mupdating\033[0m \033[34mmise\033[0m\n"
+mise plugins up
+mise upgrade
 
 # if [[ -x $(command -v rustup) ]]; then
 #     printf "\n\033[33mupdating\033[0m \033[34mrust\033[0m\n"

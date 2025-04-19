@@ -5,7 +5,6 @@ erlang = "latest"
 ffmpeg = "latest"
 java = "adopt"
 node = "lts"
-python = "3"
 rust = "stable"
 yt-dlp = "latest"
 
