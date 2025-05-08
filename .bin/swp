@@ -1,25 +1,22 @@
 #!/usr/bin/env bash
 
-PROXY_INTERFACE="Ethernet"
-PROXY_HOST=127.0.0.1
-PROXY_PORT=7890
+PROXY_INTERFACE=$(networksetup -listallhardwareports \
+    | grep -B1 "$(route get default | grep interface | awk '{print $2}')" \
+    | grep "Hardware Port:" \
+    | awk -F': ' '{print $2}')
+PROXY_HOST="${1:-localhost}"
+PROXY_PORT="${2:-7890}"
 
-if [ "$#" -ne 1 ]; then
-    echo "Argument missing [on/off]"
-    exit 0
-fi
+current_http_proxy_state=$(networksetup -getwebproxy "$PROXY_INTERFACE" | grep "^Enabled: " | awk '{print $2}')
 
-
-if [ $1 == "on" ]; then
-    networksetup -setwebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
-    networksetup -setsecurewebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
-    networksetup -setsocksfirewallproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
-    echo "Enabled proxy for $PROXY_INTERFACE"
-elif [ $1 == "off" ]; then
+if [ "$current_http_proxy_state" == "Yes" ]; then
     networksetup -setwebproxystate "$PROXY_INTERFACE" off
     networksetup -setsecurewebproxystate "$PROXY_INTERFACE" off
     networksetup -setsocksfirewallproxystate "$PROXY_INTERFACE" off
     echo "Disabled proxy for $PROXY_INTERFACE"
 else
-    echo "Argument invalid [permitted:on/off]"
+    networksetup -setwebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    networksetup -setsecurewebproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    networksetup -setsocksfirewallproxy "$PROXY_INTERFACE" "$PROXY_HOST" "$PROXY_PORT"
+    echo "Enabled proxy for $PROXY_INTERFACE: $PROXY_HOST:$PROXY_PORT"
 fi
