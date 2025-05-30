@@ -6,6 +6,7 @@ ffmpeg = "latest"
 java = "adopt"
 node = "lts"
 rust = "stable"
+uv = "latest"
 yt-dlp = "latest"
 
 [alias.java.versions]
