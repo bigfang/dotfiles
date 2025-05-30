@@ -1,0 +1,7 @@
+[[index]]
+name = "nju"
+url = "https://mirror.nju.edu.cn/pypi/web/simple"
+
+[[index]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple"
