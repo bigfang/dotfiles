@@ -5,11 +5,10 @@ erlang = "latest"
 ffmpeg = "latest"
 java = "adopt"
 node = "lts"
-rust = "stable"
 uv = "latest"
 yt-dlp = "latest"
 
-[alias.java.versions]
+[tool_alias.java.versions]
 adopt = "adoptopenjdk-21"
 
 [env]
