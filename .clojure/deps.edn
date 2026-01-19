@@ -44,6 +44,6 @@
 
   :mvn/repos {
     "central" {:url "https://maven.aliyun.com/repository/central"}
-    "clojars" {:url "https://mirror.nju.edu.cn/clojars"}
+    "clojars" {:url "https://mirrors.ustc.edu.cn/clojars"}
   }
 }

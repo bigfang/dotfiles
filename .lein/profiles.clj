@@ -1,3 +1,3 @@
 {:user 
   {:repositories 
-    [["clojars" {:url "https://mirror.nju.edu.cn/clojars"}]]}}
+    [["clojars" {:url "https://mirrors.ustc.edu.cn/clojars"}]]}}

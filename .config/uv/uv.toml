@@ -1,7 +1,12 @@
 [[index]]
-name = "nju"
-url = "https://mirror.nju.edu.cn/pypi/web/simple"
+name = "tuna"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
 
 [[index]]
 name = "aliyun"
 url = "https://mirrors.aliyun.com/pypi/simple"
+
+[[index]]
+name = "ustc"
+url = "https://mirrors.ustc.edu.cn/pypi/web/simple"
