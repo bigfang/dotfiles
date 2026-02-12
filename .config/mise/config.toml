@@ -16,4 +16,4 @@ ERL_AFLAGS = "-kernel shell_history enabled"
 RUST_WITHOUT = "rust-docs"
 
 [settings]
-# python.uv_venv_auto = true
+python.uv_venv_auto = true

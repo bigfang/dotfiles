@@ -4,25 +4,32 @@
 	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
+	rt = restore
+	sw = switch
 	br = branch
 	ci = commit
 	st = status
+	wt = worktree
+	mo = submodule
+	tr = subtree
 	cp = cherry-pick
-	ss = stash
-	sp = stash pop
-	sl = stash list
-	sa = stash apply
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	c1 = checkout HEAD^
-	r1 = reset HEAD^
+	zz = stash
+	zp = stash pop
+	zl = stash list
+	rrr = rerere
+	lg = log --color --graph --decorate --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lga = lg --all
+	lgs = lg --stat
+[pull]
+	rebase = true
+[merge]
+	conflictstyle = zdiff3
+[rerere]
+	enabled = true
 [user]
 	name = bigfang
 	email = bitair@gmail.com
 	signingkey = 165DBB59F3E1024D
-[pull]
-	rebase = true
-[merge]
-	conflictstyle = diff3
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
