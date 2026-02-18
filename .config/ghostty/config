@@ -5,7 +5,7 @@ theme = Tomorrow Night
 
 window-theme = auto
 window-width = 216
-window-height = 53
+window-height = 54
 
 macos-titlebar-style = transparent
 macos-non-native-fullscreen = true
@@ -23,6 +23,7 @@ background-blur = 6
 unfocused-split-opacity = 0.7
 
 copy-on-select = clipboard
+right-click-action = paste
 clipboard-trim-trailing-spaces = true
 
 quit-after-last-window-closed = true
@@ -31,12 +32,14 @@ quit-after-last-window-closed = true
 macos-option-as-alt = left
 
 keybind = super+shift+u=toggle_quick_terminal
+keybind = super+a=unbind
 keybind = super+q=unbind
 keybind = super+t=unbind
 keybind = super+,=unbind
 
 keybind = super+h=esc:h
 keybind = super+m=esc:m
+keybind = super+x=esc:x
 
 # 大小写
 keybind = super+c=esc:c
@@ -61,19 +64,19 @@ keybind = super+alt+j=resize_split:down,10
 keybind = super+alt+k=resize_split:up,10
 keybind = super+alt+l=resize_split:right,10
 
-# C-j 作为前缀
-keybind = ctrl+j>space=new_split:down
-keybind = ctrl+j>enter=new_split:right
-keybind = ctrl+j>h=goto_split:left
-keybind = ctrl+j>j=goto_split:down
-keybind = ctrl+j>k=goto_split:up
-keybind = ctrl+j>l=goto_split:right
-keybind = ctrl+j>,=goto_split:previous
-keybind = ctrl+j>.=goto_split:next
+# C-; 作为前缀
+keybind = ctrl+;>-=new_split:down
+keybind = ctrl+;>\=new_split:right
+keybind = ctrl+;>h=goto_split:left
+keybind = ctrl+;>j=goto_split:down
+keybind = ctrl+;>k=goto_split:up
+keybind = ctrl+;>l=goto_split:right
+keybind = ctrl+;>,=goto_split:previous
+keybind = ctrl+;>.=goto_split:next
 
-keybind = ctrl+j>ctrl+n=new_window
-keybind = ctrl+j>n=new_tab
-keybind = ctrl+j>ctrl+h=goto_tab:1
-keybind = ctrl+j>ctrl+,=previous_tab
-keybind = ctrl+j>ctrl+.=next_tab
-keybind = ctrl+j>ctrl+l=last_tab
+keybind = ctrl+;>c=new_tab
+keybind = ctrl+;>n=new_tab
+keybind = ctrl+;>ctrl+h=goto_tab:1
+keybind = ctrl+;>ctrl+,=previous_tab
+keybind = ctrl+;>ctrl+;=next_tab
+keybind = ctrl+;>ctrl+l=last_tab
