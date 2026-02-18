@@ -1,0 +1,119 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "ctrl-g": "menu::Cancel",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-x o": "workspace::ActivatePaneUp",
+      "cmd-.": ["terminal::SendText", "\u001b."],
+      "ctrl-/": ["terminal::SendText", "\u001f"],
+    },
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "enter": "search::SelectNextMatch"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "enter": "project_panel::Rename",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-[": "pane::GoBack",
+      "cmd-]": "pane::GoForward",
+      "ctrl-shift-up": "editor::MoveLineUp",
+      "ctrl-shift-down": "editor::MoveLineDown",
+      "ctrl-/": "editor::Undo",
+      "ctrl-?": "editor::Redo",
+      "ctrl-a": "editor::MoveToBeginningOfLine",
+      "ctrl-e": "editor::MoveToEndOfLine",
+      "ctrl-g": "editor::Cancel",
+      "cmd-b": "editor::MoveToPreviousWordStart",
+      // "cmd-f": "editor::MoveToNextWordEnd,
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space w": "workspace::Save",
+      "space k": "pane::CloseActiveItem",
+      "space K": "pane::ReopenClosedItem",
+      "space p d": "workspace::ToggleLeftDock",
+      "space p l": "outline::Toggle",
+      "space p f": "file_finder::Toggle",
+      "space p s": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true,
+        },
+      ],
+      "space v b": "git::Blame",
+      "space v h": "git::FileHistory",
+      "space space": "workspace::ActivateNextPane",
+      "space 0": "pane::CloseActiveItem",
+      "space \\": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "space H": "project_search::ToggleFilters",
+      // "cmd-w": "vim::VisualYank",
+      "; ;": "editor::ToggleComments",
+      "H": "vim::StartOfLine",
+      "L": "vim::EndOfLine",
+      "^": "vim::StartOfDocument",
+      "$": "vim::EndOfDocument",
+      "@": "vim::Matching",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "ctrl-g": "vim::NormalBefore",
+      "ctrl-k": "editor::CutToEndOfLine",
+      "ctrl-y": "editor::Paste",
+      "cmd-y": "editor::Paste",
+      "alt-p": "file_finder::Toggle",
+      "alt-f": "buffer_search::Deploy",
+      "cmd-n": "editor::MoveDown",
+      // "cmd-p": "editor::MoveUp",
+      "cmd-b": "editor::MoveToPreviousWordStart",
+      // "cmd-f": "editor::MoveToNextWordEnd",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert && showing_completions",
+    "bindings": {
+      "cmd-p": "editor::ContextMenuPrevious",
+      "cmd-n": "editor::ContextMenuNext",
+      "cmd-i": "editor::ContextMenuNext",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds",
+      "v": "editor::SelectLargerSyntaxNode",
+      "V": "editor::SelectSmallerSyntaxNode",
+    },
+  },
+]
