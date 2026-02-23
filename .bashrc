@@ -23,9 +23,10 @@ alias dc='docker compose'
 
 
 [[ -x $(command -v nvim) ]] && alias vi=nvim
-[[ -x $(command -v dotnet) ]] && alias dnt=dotnet
 [[ -x $(command -v bat) ]] && alias cat="bat -p"
 [[ -x $(command -v btm) ]] && alias btop="btm -b"
+[[ -x $(command -v tmux) ]] && alias ta="tmux new -A -s praha"
+[[ -x $(command -v dotnet) ]] && alias dnt=dotnet
 [[ -f ~/.bin/etc/skimrc ]] && . ~/.bin/etc/skimrc
 [[ -n "$WORKING_ENV" ]] && [[ -f ~/.bin/etc/gitrc ]] && . ~/.bin/etc/gitrc
 
