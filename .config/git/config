@@ -1,7 +1,5 @@
 [init]
 	defaultBranch = master
-[core]
-	excludesfile = ~/.gitignore
 [alias]
 	co = checkout
 	rt = restore
@@ -30,10 +28,5 @@
 	name = bigfang
 	email = bitair@gmail.com
 	signingkey = 165DBB59F3E1024D
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 # [commit]
 # 	gpgsign = true

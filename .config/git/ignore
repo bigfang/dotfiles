@@ -4,11 +4,12 @@
 # Windows
 Thumbs.db
 
-# Node
-npm-debug.log
+# Linux
+*.swp
+nohup.out
 
-# vi
+# Vim, Emacs
 *~
-
-# Emacs
 \#*\#
+
+.env
