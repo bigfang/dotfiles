@@ -51,6 +51,7 @@ keybind = super+b=esc:b
 # 编辑
 keybind = super+d=esc:d
 keybind = super+w=esc:w
+keybind = super+t=esc:t
 # 遍历
 keybind = super+n=esc:n
 keybind = super+p=esc:p
@@ -75,8 +76,10 @@ keybind = ctrl+;>,=goto_split:previous
 keybind = ctrl+;>.=goto_split:next
 
 keybind = ctrl+;>c=new_tab
-keybind = ctrl+;>n=new_tab
-keybind = ctrl+;>ctrl+h=goto_tab:1
-keybind = ctrl+;>ctrl+,=previous_tab
+keybind = ctrl+;>ctrl+n=new_tab
+
+keybind = ctrl+;>p=previous_tab
+keybind = ctrl+;>n=next_tab
 keybind = ctrl+;>ctrl+;=next_tab
+keybind = ctrl+;>ctrl+h=goto_tab:1
 keybind = ctrl+;>ctrl+l=last_tab
