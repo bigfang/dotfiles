@@ -5,11 +5,10 @@ got() {
   git --git-dir="$HOME"/.dotfiles.git --work-tree="$HOME" "$@"
 }
 mkdir -p "$HOME"/.dot-backup
-if [[ "$(got checkout)" ]]; then
+if got checkout 2>&1 | grep -q .; then
   echo "Checked out dot files.";
 else
   echo "Backing up pre-existing dot files.";
-  got checkout 2>&1 | grep -E "^\s+" | awk '{$1=$1;print}' | xargs -I{} mv {} .dot-backup/
-fi;
-got checkout
+  got checkout 2>&1 | grep -E "^\s+" | awk '{$1=$1;print}' | xargs -I{} mv {} "$HOME"/.dot-backup/
+fi
 got config status.showUntrackedFiles no

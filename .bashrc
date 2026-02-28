@@ -1,6 +1,6 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-PATH=$HOME/.bin:$PATH
+PATH=$HOME/.bun/bin:$HOME/.local/bin:$PATH
 
 
 # tools: fzf skim ripgrep fd eza bat
@@ -27,6 +27,5 @@ alias dc='docker compose'
 [[ -x $(command -v btm) ]] && alias btop="btm -b"
 [[ -x $(command -v tmux) ]] && alias ta="tmux new -A -s praha"
 [[ -x $(command -v dotnet) ]] && alias dnt=dotnet
-[[ -f ~/.bin/etc/skimrc ]] && . ~/.bin/etc/skimrc
-[[ -n "$WORKING_ENV" ]] && [[ -f ~/.bin/etc/gitrc ]] && . ~/.bin/etc/gitrc
-
+[[ -f ~/.local/etc/skimrc ]] && . ~/.local/etc/skimrc
+[[ -n "$WORKING_ENV" ]] && [[ -f ~/.local/etc/gitrc ]] && . ~/.local/etc/gitrc

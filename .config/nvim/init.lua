@@ -25,4 +25,3 @@ map("n", "k", "gk", opt)
 map("n", "gk", "k", opt)
 
 map("n", "<BS>", ":nohl<CR>", {})
-

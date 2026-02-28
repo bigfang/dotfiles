@@ -9,4 +9,3 @@ default_channels:
 custom_channels:
   conda-forge: https://mirrors.ustc.edu.cn/anaconda/cloud
   pytorch: https://mirrors.ustc.edu.cn/anaconda/cloud
-

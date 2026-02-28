@@ -1,5 +1,5 @@
-# if [ -f ~/.bin/etc/zshrc ]; then
-#    source ~/.bin/etc/zshrc
+# if [ -f ~/.local/etc/zshrc ]; then
+#    source ~/.local/etc/zshrc
 # fi
 
 bindkey '\el' down-case-word

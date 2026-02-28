@@ -60,7 +60,7 @@ curl -fsSL https://github.com/bigfang/dotfiles/raw/master/.local/bin/dotsinit.sh
 - `swp` - macOS 系统代理切换脚本（参数：主机 端口）
 - `upp` - 统一更新脚本（更新 Emacs/oh-my-zsh/homebrew/mise/bun/skills）
 
-### .local/etc/（需在对应 Shell 配置中 source）
-- `gitrc` - Git 包装脚本，使用 Homebrew git + GPG 支持，init/clone 时自动配置 user.name/email
-- `skimrc` - skim (fzf 替代品) 配置及快捷函数：skf/fh/fkill/cdd/cdf/drs/drmi
+### .local/etc/
+- `gitrc` - Git 包装脚本，使用 Homebrew git + GPG 支持，init/clone 时自动配置 user.name/email（已在 `.bashrc` 中加载）
+- `skimrc` - skim (fzf 替代品) 配置及快捷函数：skf/fh/fkill/cdd/cdf/drs/drmi（已在 `.bashrc` 中加载）
 - `zshrc` - Zsh 特定配置：zoxide/mise 初始化、Homebrew 镜像源
