@@ -1,0 +1,66 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## 概述
+
+这是一个 dotfiles 仓库，用于管理用户的个性化配置文件（Shell、Git、Vim、Tmux、Neovim、SSH 等）。
+
+## 初始化部署
+
+通过以下命令一键部署：
+```bash
+curl -fsSL https://github.com/bigfang/dotfiles/raw/master/.local/bin/dotsinit.sh | /bin/bash
+```
+
+## 目录结构
+
+- `.[文件名]` - 放在 `$HOME` 根目录的配置文件（如 `.bashrc`, `.vimrc`, `.ssh/config`）
+- `.config/` - 遵循 XDG 规范的配置目录，包含：
+  - `nvim/` - Neovim 配置
+  - `tmux/` - Tmux 配置
+  - `git/` - Git 配置
+  - `ghostty/` - Ghostty 终端配置
+  - `zed/` - Zed 编辑器配置
+- `.local/bin/` - 工具脚本目录
+- `.local/etc/` - Shell 额外配置（需手动 source）
+
+## 常用配置说明
+
+### Shell 别名
+- `ll` - `eza` 带 git 状态显示
+- `lt` - 树状显示目录结构
+- `ta` - 连接名为 "praza" 的 tmux 会话
+- `vi` - 根据可用性选择 nvim 或 emacsclient
+- `dc` - docker compose
+
+### Git 配置
+- 默认分支：`master`
+- 拉取时 rebase：`pull.rebase = true`
+- 冲突风格：`zdiff3`
+- 常用别名：`co` (checkout), `st` (status), `lg` (彩色日志), `zz/zp` (stash)
+
+### Tmux 配置
+- 前缀键：`C-j`
+- 分屏：`\` (水平), `"` (垂直)
+- 面板导航：vim 风格 `h/j/k/l`
+- 复制模式：vi 风格，按 `y` 或 `Enter` 复制选中内容
+
+### Vim/Neovim 配置
+- leader 键：空格
+- 交换 `q` 和 `%` 键
+- 交换 `H/L` 和 `^/$` 键
+- 交换 `j/k` 和 `gj/gk` 键
+- 退格键清除搜索高亮
+
+## 工具脚本
+
+### .local/bin/
+- `dotsinit.sh` - dotfiles 初始化部署脚本
+- `swp` - macOS 系统代理切换脚本（参数：主机 端口）
+- `upp` - 统一更新脚本（更新 Emacs/oh-my-zsh/homebrew/mise/bun/skills）
+
+### .local/etc/（需在对应 Shell 配置中 source）
+- `gitrc` - Git 包装脚本，使用 Homebrew git + GPG 支持，init/clone 时自动配置 user.name/email
+- `skimrc` - skim (fzf 替代品) 配置及快捷函数：skf/fh/fkill/cdd/cdf/drs/drmi
+- `zshrc` - Zsh 特定配置：zoxide/mise 初始化、Homebrew 镜像源
