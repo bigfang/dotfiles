@@ -32,6 +32,7 @@ curl -fsSL https://github.com/bigfang/dotfiles/raw/master/.local/bin/dotsinit.sh
 │   ├── mise/            # mise 工具版本管理
 │   ├── nvim/
 │   ├── pip/
+│   ├── tig/             # Git 日志查看器
 │   ├── tmux/
 │   ├── uv/
 │   └── zed/

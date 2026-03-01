@@ -1,0 +1,8 @@
+set vertical-split = auto
+set split-view-width = 60%
+
+set diff-context = 4
+set ignore-space = some
+
+# bind main w !git difftool -d %(commit)^!  
+# bind diff w !git difftool -d %(commit)^!
