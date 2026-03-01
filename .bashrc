@@ -1,6 +1,10 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-PATH=$HOME/.bun/bin:$HOME/.local/bin:$PATH
+
+[[ -z "$__PATH_LOADED_GUARD" ]] && {
+  export PATH="$HOME/.bun/bin:$HOME/.local/bin:$PATH"
+  export __PATH_LOADED_GUARD=1
+}
 
 
 # tools: fzf skim ripgrep fd eza bat

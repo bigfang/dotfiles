@@ -12,6 +12,8 @@ fi
 
 [[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init zsh)" && alias cd=z
 [[ -x "$(command -v mise)" ]] && eval "$(mise activate zsh)"
+[[ -x "$(command -v uv)" ]] && eval "$(uv generate-shell-completion zsh)"
+[[ -x "$(command -v uvx)" ]] && eval "$(uvx --generate-shell-completion zsh)"
 
 
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
