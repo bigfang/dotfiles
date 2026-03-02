@@ -6,7 +6,6 @@ ffmpeg = "latest"
 java = "adopt"
 node = "lts"
 uv = "latest"
-yt-dlp = "latest"
 
 [tool_alias.java.versions]
 adopt = "adoptopenjdk-21"

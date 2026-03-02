@@ -20,6 +20,9 @@ mise upgrade
 #     rustup update
 # fi
 
+printf "\n\033[33mupdating\033[0m \033[34muv packages\033[0m\n"
+uv tool upgrade --all
+
 printf "\n\033[33mupdating\033[0m \033[34mbun packages\033[0m\n"
 bun update -g --latest
 
