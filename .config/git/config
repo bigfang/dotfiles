@@ -5,6 +5,7 @@
 	rt = restore
 	sw = switch
 	br = branch
+	brt = for-each-ref --sort=-committerdate --format='%(color:cyan)%(objectname:short)%(color:reset) %(color:green)%(refname:short)%(color:reset) - %(contents:subject) %(color:yellow)(%(authorname), %(committerdate:relative))%(color:reset)' refs/heads/
 	ci = commit
 	st = status
 	wt = worktree
