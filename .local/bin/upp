@@ -27,4 +27,4 @@ printf "\n\033[33mupdating\033[0m \033[34mbun packages\033[0m\n"
 bun update -g --latest
 
 printf "\n\033[33mupdating\033[0m \033[34mskills\033[0m\n"
-bunx skills update
+bunx skills update -g

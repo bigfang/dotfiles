@@ -87,7 +87,7 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j j": "vim::NormalBefore",
+      // "j j": "vim::NormalBefore",
       "ctrl-g": "vim::NormalBefore",
       "ctrl-k": "editor::CutToEndOfLine",
       "ctrl-y": "editor::Paste",
