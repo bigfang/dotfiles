@@ -1,2 +1,3 @@
 [install]
 registry = "http://registry.npmmirror.com"
+# registry = "http://mirrors.tencent.com/npm/"
