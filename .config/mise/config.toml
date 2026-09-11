@@ -3,7 +3,7 @@ bun = "latest"
 elixir = "latest"
 erlang = "latest"
 ffmpeg = "latest"
-java = "adopt"
+java = "temurin-21"
 node = "lts"
 uv = "latest"
 
